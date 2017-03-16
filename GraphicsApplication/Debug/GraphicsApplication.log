@@ -1,0 +1,8 @@
+﻿  GraphicsApplication.cpp
+GraphicsApplication.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __thiscall QApplication::QApplication(int &,char * *,int)" (__imp_??0QApplication@@QAE@AAHPAPADH@Z)，该符号在函数 _main 中被引用
+GraphicsApplication.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: virtual __thiscall QApplication::~QApplication(void)" (__imp_??1QApplication@@UAE@XZ)，该符号在函数 _main 中被引用
+GraphicsApplication.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: static int __cdecl QApplication::exec(void)" (__imp_?exec@QApplication@@SAHXZ)，该符号在函数 _main 中被引用
+E:\X_HSU\201703\GraphicsApplication\MiddleWare\Qt\lib\Qt5Cored.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
+E:\X_HSU\201703\GraphicsApplication\MiddleWare\Qt\lib\Qt5Guid.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
+E:\X_HSU\201703\GraphicsApplication\MiddleWare\Qt\lib\Qt5OpenGLd.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
+E:\X_HSU\201703\GraphicsApplication\GraphicsApplication\Debug\GraphicsApplication.exe : fatal error LNK1120: 3 个无法解析的外部命令

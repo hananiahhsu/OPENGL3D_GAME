@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  stdafx.cpp
+  GraphicsApplication.cpp
+  正在生成代码...
+GraphicsApplication.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __cdecl QApplication::QApplication(int &,char * *,int)" (__imp_??0QApplication@@QEAA@AEAHPEAPEADH@Z)，该符号在函数 main 中被引用
+GraphicsApplication.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: virtual __cdecl QApplication::~QApplication(void)" (__imp_??1QApplication@@UEAA@XZ)，该符号在函数 main 中被引用
+GraphicsApplication.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: static int __cdecl QApplication::exec(void)" (__imp_?exec@QApplication@@SAHXZ)，该符号在函数 main 中被引用
+E:\X_HSU\201703\GraphicsApplication\GraphicsApplication\x64\Debug\GraphicsApplication.exe : fatal error LNK1120: 3 个无法解析的外部命令

@@ -21,6 +21,7 @@ protected:
 	void paintGL();
 public:
 	void sendDataToOpenGL();
+	void sendAnotherTriToOpenGL();
 	void installShaders();
 private:
 

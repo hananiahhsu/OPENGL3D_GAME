@@ -2,6 +2,9 @@
 #include<MeGLWindow.h>
 #include<iostream>
 #include <fstream>
+#include <glm\glm.hpp>
+#include "Primitives\Vertex.h"
+#include "Primitives\ShapeGenerator.h"
 using namespace std;
 #if 0
 //GL type
@@ -34,6 +37,16 @@ GLclampd	64	An IEEE - 754 floating - point value, clamped to the range[0, 1]
 
 extern const char* vertexShaderCode;
 extern const char* fragmentShaderCode;
+
+//pitch for X-axis moving
+const GLfloat X_PITCH = 0.1f;
+const GLfloat Y_PITCH = 0.1f;
+GLuint numTriangles = 0;
+
+const GLuint NUM_VERTICES_PER_TRI = 3;
+const GLuint NUM_FLOATS_PER_VERTICE = 6;
+const GLuint TRI_BYTE_SIZE = NUM_VERTICES_PER_TRI * NUM_FLOATS_PER_VERTICE * sizeof(GLfloat);
+const GLuint MAX_TRIS = 20;
 
 
 void MeGLWindow::sendDataToOpenGL()
@@ -175,29 +188,81 @@ void MeGLWindow::sendDataToOpenGL()
 
 #endif
 
-#if 1
+#if 0
 //This section realize the function of drawing saw-like triangles
 GLuint vertex_buffer_id;
 glGenBuffers(1, &vertex_buffer_id);
 glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_id);
-glBufferData(GL_ARRAY_BUFFER,10000, NULL, GL_STATIC_DRAW);//_nullptr, or 0 is okay too
+glBufferData(GL_ARRAY_BUFFER,MAX_TRIS * TRI_BYTE_SIZE, NULL, GL_STATIC_DRAW);//_nullptr, or 0 is okay too
 
 glEnableVertexAttribArray(0);//
 glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, 0);//from vertexed[],you can see that the stride of potion is sizeof(float)*5
 glEnableVertexAttribArray(1);//
 glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (char*)(sizeof(GLfloat) * 3));//from vertexed[],you can see that the stride of color is also sizeof(float)*5
-
-
-
-
-
 #endif
 
 
 
+#if 1
+//GLM
+//This section realize the vertex data structure using glm
+//2017.4.7-move myTri[] to shapeData.cpp
+/*
+Vertex myTri[] =
+{
+	glm::vec3(0.0f,1.0f,0.0f),
+	glm::vec3(1.0f,0.0f,0.0f),
+
+	glm::vec3(-1.0f,-1.0f,0.0f),
+	glm::vec3(0.0f,1.0f,0.0f),
+
+	glm::vec3(1.0f,-1.0f,0.0f),
+	glm::vec3(0.0f,0.0f,1.0f),
+};
+*/
+ShapeData shape_data = ShapeGenerator::MakeTriangles();
+GLuint vertex_buffer_id;
+glGenBuffers(1, &vertex_buffer_id);
+glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_id);
+glBufferData(GL_ARRAY_BUFFER,shape_data.vertexBufferSize(), shape_data.vertices, GL_STATIC_DRAW);
+
+glEnableVertexAttribArray(0);//
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, 0);//from vertexed[],you can see that the stride of potion is sizeof(float)*5
+glEnableVertexAttribArray(1);//
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (char*)(sizeof(GLfloat) * 3));//from vertexed[],you can see that the stride of color is also sizeof(float)*5
+#endif
+
 
 
 }
+
+
+void MeGLWindow::sendAnotherTriToOpenGL()
+{
+	if (numTriangles == MAX_TRIS)
+		return;
+	//counter clock-wise
+	const GLfloat Cur_Tri_X = -1 + numTriangles * X_PITCH;
+	GLfloat another_tri[] =
+	{
+		Cur_Tri_X,0.0f,0.0f,
+		1.0f,0.0f,0.0f,
+
+		Cur_Tri_X+X_PITCH,1.0f,0.0f,
+		1.0f,0.0f,0.0f,
+
+		Cur_Tri_X,1.0f,0.0f,
+		1.0f,0.0f,0.0f,
+	};
+
+	//bind the sub data
+	glBufferSubData(GL_ARRAY_BUFFER,numTriangles * TRI_BYTE_SIZE,TRI_BYTE_SIZE,another_tri);
+	numTriangles++;
+}
+
+
+
+
 
 //check the status of shader
 bool checkShaderStatus(GLuint vertex_shader_id)
@@ -320,7 +385,20 @@ void MeGLWindow::paintGL()
 	//glDrawArrays(GL_TRIANGLES,0,6);//Draw 2 triangle on the dialog by the vertex
 
 
-
+	//glClear(GL_DEPTH_BUFFER_BIT);
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+	//Note:The function is used for indices only
 	//glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_SHORT,0);//commented for lecture 21-drawing any types of triangles,eg saw-like
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+
+#if 0
+	//Draw many saw-like triangles
+	//send another triangles to OpenGL 
+	sendAnotherTriToOpenGL();
+	//To draw many specific triangles
+	//glDrawArrays(GL_TRIANGLES,0,numTriangles * NUM_VERTICES_PER_TRI);
+	glDrawArrays(GL_TRIANGLES, (numTriangles-1)*NUM_VERTICES_PER_TRI,NUM_VERTICES_PER_TRI);
+
+#endif
 }  

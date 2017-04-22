@@ -1,16 +1,19 @@
 #pragma once
-#include <GL\glew.h>
-#include "Vertex.h"
-//declaration of class Vertex
-class Vertex;
+#include <glew.h>
+#include "Primitives\Vertex.h"
 
-struct ShapeData
+//declaration of class Vertex
+//class Vertex;
+
+class ShapeData
 {
+public:
 	ShapeData()
 		:vertices(0),num_vertices(0),indices(0),num_indices(0)
 	{
 
 	}
+
 	Vertex   * vertices;
 	GLuint   num_vertices;
 	GLushort *indices;
@@ -22,5 +25,11 @@ struct ShapeData
 	GLsizeiptr indexBufferSize() const
 	{
 		return num_indices * sizeof(GLushort);
+	}
+	void UsrClearShapeData()
+	{
+		delete[] vertices;
+		delete[] indices;
+		num_indices = num_vertices = 0;
 	}
 };

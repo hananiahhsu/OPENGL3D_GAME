@@ -27,6 +27,9 @@
     <Filter Include="Primitives">
       <UniqueIdentifier>{b2d1e79d-cb42-4d9f-b170-debe471b10e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GLSL">
+      <UniqueIdentifier>{edc73b78-0445-404b-b7f6-7a90f0592146}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -41,27 +44,102 @@
     <ClCompile Include="Primitives\ShapeGenerator.cpp">
       <Filter>Primitives</Filter>
     </ClCompile>
+    <ClCompile Include="UniformColor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CubicBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitives\CubeGenerator.cpp">
+      <Filter>Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="TeaPot.cpp">
+      <Filter>Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawElementsInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CubicBox_AttributeLocation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyCamera.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CubicBox_DynamicDraw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitives\ArrowGenerator.cpp">
+      <Filter>Primitives</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MeGLWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vertex.h">
-      <Filter>Primitives</Filter>
-    </ClInclude>
     <ClInclude Include="Primitives\ShapeData.h">
       <Filter>Primitives</Filter>
     </ClInclude>
-    <ClInclude Include="ShapeGenerator.h">
+    <ClInclude Include="UniformColor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CubicBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\ShapeGenerator.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="TeaPot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawElementsInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CubicBox_AttributeLocation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CubicBox_DynamicDraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\CubeGenerator.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\Vertex.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\ArrowGenerator.h">
       <Filter>Primitives</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="vertexShaderCode.glsl">
-      <Filter>Header Files</Filter>
+    <None Include="CubicBox_FragmentShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="CubicBox_VertexShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
     </None>
     <None Include="fragmentShaderCode.glsl">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="simple_rotation_VertexShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="UniformColor_FragmentShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="UniformColor_VertexShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="vertexShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="DrawElementsInstance.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="CubicBox_AttributeLocation_VertexShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
     </None>
   </ItemGroup>
 </Project>

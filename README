@@ -9,3 +9,7 @@ VS2015+QT5.8Lib
 
 2017/04/09-Committed contents:
 1.Add shapeGenerator;
+
+2017/04/22-Commit many independent GLSL for cudes and dynamic drawing
+1.Teapot using glut
+2.GLSL files etc.

@@ -232,8 +232,8 @@ glEnableVertexAttribArray(1);//
 glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (char*)(sizeof(GLfloat) * 3));//from vertexed[],you can see that the stride of color is also sizeof(float)*5
 #endif
 
-
-
+//Clear the pointers
+shape_data.UsrClearShapeData();
 }
 
 

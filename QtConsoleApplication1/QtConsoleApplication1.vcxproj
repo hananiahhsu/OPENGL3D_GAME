@@ -13,6 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
     <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -40,15 +41,16 @@
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;E:\X_HSU\201703\GraphicsApplication\MiddleWare\glew-2.0.0\include\GL;..\MiddleWare;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles\$(ConfigurationName);$(ProjectDir)..\MiddleWare\Qt\include;$(ProjectDir)..\MiddleWare\Qt\include\QtCore;$(ProjectDir)..\MiddleWare\Qt\include\QtGui;$(ProjectDir)..\MiddleWare\Qt\include\QtOpenGL;$(ProjectDir)..\MiddleWare\Qt\include\QtWidgets;$(ProjectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\include\GL;$(ProjectDir)..\MiddleWare\glew-2.0.0\include\GL;$(ProjectDir)..\MiddleWare;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>E:\X_HSU\201703\GraphicsApplication\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\lib\x64;$(QTDIR)\lib;E:\X_HSU\201703\GraphicsApplication\MiddleWare\glew-2.0.0\lib\Debug\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.;$(ProJectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\lib\x64;$(ProJectDir)..\MiddleWare\glew-2.0.0\lib\Debug\x64;$(ProJectDir)..\MiddleWare\Qt\lib;$(ProJectDir)..\MiddleWare\Qt\bin;$(ProJectDir)..\MiddleWare\Qt\bin\platforms;E:\X_HSU\201703\GraphicsApplication\QtConsoleApplication1\x64\Debug\plugins;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5Widgetsd.lib;glew32d.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32d.lib;opengl32.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;Qt5Widgetsd.lib;glu32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
     <Manifest>
@@ -72,19 +74,50 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CubicBox.cpp" />
+    <ClCompile Include="CubicBox_AttributeLocation.cpp" />
+    <ClCompile Include="CubicBox_DynamicDraw.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/CubicBox_DynamicDraw/</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="DrawElementsInstance.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MeGLWindow.cpp" />
+    <ClCompile Include="MyCamera.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/MyCamera/</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="MyCamera.h">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/MyCamera/</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Primitives\ArrowGenerator.cpp" />
+    <ClCompile Include="Primitives\CubeGenerator.cpp" />
     <ClCompile Include="Primitives\ShapeGenerator.cpp" />
     <ClCompile Include="QtGLShaderCode.cpp" />
+    <ClCompile Include="TeaPot.cpp" />
+    <ClCompile Include="UniformColor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CubicBox.h" />
+    <ClInclude Include="CubicBox_AttributeLocation.h" />
+    <ClInclude Include="CubicBox_DynamicDraw.h" />
+    <ClInclude Include="DrawElementsInstance.h" />
     <ClInclude Include="MeGLWindow.h" />
+    <ClInclude Include="Primitives\ArrowGenerator.h" />
+    <ClInclude Include="Primitives\CubeGenerator.h" />
     <ClInclude Include="Primitives\ShapeData.h" />
-    <ClInclude Include="ShapeGenerator.h" />
-    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="Primitives\ShapeGenerator.h" />
+    <ClInclude Include="Primitives\Vertex.h" />
+    <ClInclude Include="TeaPot.h" />
+    <ClInclude Include="UniformColor.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CubicBox_AttributeLocation_VertexShaderCode.glsl" />
+    <None Include="CubicBox_FragmentShaderCode.glsl" />
+    <None Include="CubicBox_VertexShaderCode.glsl" />
+    <None Include="DrawElementsInstance.glsl" />
     <None Include="fragmentShaderCode.glsl" />
+    <None Include="simple_rotation_VertexShaderCode.glsl" />
+    <None Include="UniformColor_FragmentShaderCode.glsl" />
+    <None Include="UniformColor_VertexShaderCode.glsl" />
     <None Include="vertexShaderCode.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
@@ -92,7 +125,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="Qt_2015" MocOptions="" />
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="QT580" MocOptions="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

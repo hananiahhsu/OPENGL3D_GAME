@@ -5,6 +5,11 @@
 #include <glm\glm.hpp>
 #include "Primitives\Vertex.h"
 #include "Primitives\ShapeGenerator.h"
+#include <SOIL.h>
+#include <Windows.h>
+#include <stdio.h>
+#include <string.h>
+
 using namespace std;
 using glm::vec3;
 
@@ -24,9 +29,8 @@ const GLuint MAX_TRIS = 20;
 
 void UniformColor::sendDataToOpenGL()
 {
-#if 1
-
 	ShapeData shape_data = ShapeGenerator::MakeTriangles();
+
 	GLuint vertex_buffer_id;
 	glGenBuffers(1, &vertex_buffer_id);
 	glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_id);
@@ -36,7 +40,10 @@ void UniformColor::sendDataToOpenGL()
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, 0);//from vertexed[],you can see that the stride of potion is sizeof(float)*5
 	glEnableVertexAttribArray(1);//
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (char*)(sizeof(GLfloat) * 3));//from vertexed[],you can see that the stride of color is also sizeof(float)*5
-#endif
+
+
+	//glBindVertexArray(0); // Unbind VAO
+
 
 	//Clear the pointers
 	shape_data.UsrClearShapeData();
@@ -103,6 +110,7 @@ void UniformColor::installShaders()
 	program_object_id = glCreateProgram();
 	glAttachShader(program_object_id, vertex_shader_id);
 	glAttachShader(program_object_id, fragment_shader_id);
+
 	glLinkProgram(program_object_id);
 	glUseProgram(program_object_id);
 
@@ -130,7 +138,6 @@ void UniformColor::initializeGL()
 	//Enable gl depth test
 	glEnable(GL_DEPTH_TEST);
 
-
 	//Send datas to OpenGL
 	sendDataToOpenGL();
 	//install the shaders(vertex shaders and fragment shaders)
@@ -140,10 +147,8 @@ void UniformColor::initializeGL()
 
 void UniformColor::paintGL()
 {
-	glViewport(0, 0, width(), height());//Get the width and height of the dialog(window)
-							
+	glViewport(0, 0, width(), height());//Get the width and height of the dialog(window)						
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
-
 
 	//Get the uniform color by gl functions
 	GLint uniformColor_Location = glGetUniformLocation(program_object_id,"uniformColor");
@@ -151,14 +156,13 @@ void UniformColor::paintGL()
 	GLint xFlipUniformLocation = glGetUniformLocation(program_object_id, "xFlip");
 	GLint zFlipUniformLocation = glGetUniformLocation(program_object_id, "zFlip");
 
-
-
 	//The 1st triangle using uniform variable(yFlip,you could also use xFlip or zFlip too)
 	vec3 uniColor(0.3f, 0.7f, 1.0f);
 	glUniform3fv(uniformColor_Location,1,&uniColor[0]);
 	glUniform1f(yFlipUniformLocation,1.0f);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
+#if 1
 	//The 2nd triangle using uniform triangle
 	uniColor.r = 0.5f;
 	uniColor.b = 0.8f;
@@ -174,7 +178,7 @@ void UniformColor::paintGL()
 	glUniform3fv(uniformColor_Location, 1, &uniColor[0]);
 	glUniform1f(xFlipUniformLocation, -1.0f);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
+#endif
 
 
-	//The 4th triangles
 }

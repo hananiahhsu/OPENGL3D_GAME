@@ -30,6 +30,9 @@
     <Filter Include="Header Files\GLSL">
       <UniqueIdentifier>{edc73b78-0445-404b-b7f6-7a90f0592146}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Primitives\AssImplLoad">
+      <UniqueIdentifier>{5c5ac681-6f61-4bc2-9240-a03edc7b2cf5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +77,27 @@
     <ClCompile Include="Primitives\ArrowGenerator.cpp">
       <Filter>Primitives</Filter>
     </ClCompile>
+    <ClCompile Include="Primitives\TeaPotGenerator.cpp">
+      <Filter>Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitives\PlaneGenerator.cpp">
+      <Filter>Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="LightSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loadBMP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoD_texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitives\texture01.cpp">
+      <Filter>Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitives\AssImplLoad\loadModel.cpp">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MeGLWindow.h">
@@ -112,6 +136,54 @@
     <ClInclude Include="Primitives\ArrowGenerator.h">
       <Filter>Primitives</Filter>
     </ClInclude>
+    <ClInclude Include="Primitives\TeaPotGenerator.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\PlaneGenerator.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\TeapotData.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="LightSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XuModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\TextureData.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="loadBMP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoD_texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\shader.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\texture01.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\AssImplLoad\camera.h">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\AssImplLoad\mesh.h">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\AssImplLoad\model.h">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\AssImplLoad\shader.h">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\AssImplLoad\texture.h">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives\AssImplLoad\loadModel.h">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CubicBox_FragmentShaderCode.glsl">
@@ -141,5 +213,40 @@
     <None Include="CubicBox_AttributeLocation_VertexShaderCode.glsl">
       <Filter>Header Files\GLSL</Filter>
     </None>
+    <None Include="LightSource_VertexShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="LightSource_FragmentShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="LightSource_VertexPassthroughCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="LightSource_FragmentPassThroughCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="TwoD_texture_VertexShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="TwoD_texture_FragmentShaderCode.glsl">
+      <Filter>Header Files\GLSL</Filter>
+    </None>
+    <None Include="Primitives\triangle.vertex">
+      <Filter>Primitives</Filter>
+    </None>
+    <None Include="Primitives\triangle.frag">
+      <Filter>Primitives</Filter>
+    </None>
+    <None Include="Primitives\AssImplLoad\model.frag">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </None>
+    <None Include="Primitives\AssImplLoad\model.vertex">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Primitives\AssImplLoad\modelPath.txt">
+      <Filter>Primitives\AssImplLoad</Filter>
+    </Text>
   </ItemGroup>
 </Project>

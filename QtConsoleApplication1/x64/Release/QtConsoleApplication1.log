@@ -1,0 +1,7 @@
+﻿  UniformColor.cpp
+x64\Release\MyCamera.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  SOIL.lib(SOIL.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
+x64\Release\MyCamera.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  正在生成代码
+  已完成代码的生成
+  QtConsoleApplication1.vcxproj -> E:\X_HSU\201703\GraphicsApplication\QtConsoleApplication1\x64\Release\QtConsoleApplication1.exe

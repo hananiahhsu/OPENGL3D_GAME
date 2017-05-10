@@ -8,6 +8,10 @@
 #include "DrawElementsInstance.h"
 #include "CubicBox_AttributeLocation.h"
 #include "CubicBox_DynamicDraw.h"
+#include "LightSource.h"
+#include "XuModel.h"
+#include "TwoD_texture.h"
+#include "Primitives/texture01.h"
 int main(int argc, char *argv[])
 {
 	//The following 2 lines were created by the Qt automatically
@@ -55,9 +59,30 @@ int main(int argc, char *argv[])
 	ca.show();
 #endif
 
-#if 1
+#if 0
 	CubicBox_DynamicDraw cd;
 	cd.show();
 #endif
+
+
+#if 0
+	XuModel xm;
+	LightSource ls(&xm);
+	ls.show();
+#endif
+
+
+#if 0
+	TwoD_texture td;
+	td.show();
+
+#endif
+
+#if 1
+	texture01 t1;
+	t1.main(argc,argv);
+
+#endif
+
 	return app.exec();
 }

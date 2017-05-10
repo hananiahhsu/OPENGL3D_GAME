@@ -132,7 +132,7 @@ public:
 	void StrafeRight();
 	void moveUp();
 	void moveDown();
-
+	glm::vec3 getPosition() const { return Position; }//2017.4.23
 private:
 	// Calculates the front vector from the Camera's (updated) Eular Angles
 	void updateCameraVectors()

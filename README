@@ -13,3 +13,5 @@ VS2015+QT5.8Lib
 2017/04/22-Commit many independent GLSL for cudes and dynamic drawing
 1.Teapot using glut
 2.GLSL files etc.
+
+2017/05/10-Commit 2D texture example

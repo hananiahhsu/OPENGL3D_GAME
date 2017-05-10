@@ -2,6 +2,8 @@
 in layout(location=0) vec3 position;
 in layout(location=1) vec3 vertexColor;
 
+
+
 uniform vec3 uniformColor;
 uniform float yFlip;
 uniform float xFlip;
@@ -9,6 +11,7 @@ uniform float zFlip;
 
 
 out vec3 theColor;
+
 
 void main()
 {

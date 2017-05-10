@@ -41,17 +41,18 @@
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles\$(ConfigurationName);$(ProjectDir)..\MiddleWare\Qt\include;$(ProjectDir)..\MiddleWare\Qt\include\QtCore;$(ProjectDir)..\MiddleWare\Qt\include\QtGui;$(ProjectDir)..\MiddleWare\Qt\include\QtOpenGL;$(ProjectDir)..\MiddleWare\Qt\include\QtWidgets;$(ProjectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\include\GL;$(ProjectDir)..\MiddleWare\glew-2.0.0\include\GL;$(ProjectDir)..\MiddleWare;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles\$(ConfigurationName);$(ProjectDir)..\MiddleWare\Qt\include;$(ProjectDir)..\MiddleWare\Qt\include\QtCore;$(ProjectDir)..\MiddleWare\Qt\include\QtGui;$(ProjectDir)..\MiddleWare\Qt\include\QtOpenGL;$(ProjectDir)..\MiddleWare\Qt\include\QtWidgets;$(ProjectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\include\GL;$(ProjectDir)..\MiddleWare\glew-2.0.0\include\GL;$(ProjectDir)..\MiddleWare;$(ProjectDir)..\MiddleWare\soil_include;$(ProjectDir)..\MiddleWare\glfw-3.2.1.bin.WIN64\include\GLFW;$(ProjectDir)..\MiddleWare\assimp\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>.;$(ProJectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\lib\x64;$(ProJectDir)..\MiddleWare\glew-2.0.0\lib\Debug\x64;$(ProJectDir)..\MiddleWare\Qt\lib;$(ProJectDir)..\MiddleWare\Qt\bin;$(ProJectDir)..\MiddleWare\Qt\bin\platforms;E:\X_HSU\201703\GraphicsApplication\QtConsoleApplication1\x64\Debug\plugins;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.;$(ProJectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\lib\x64;$(ProJectDir)..\MiddleWare\glew-2.0.0\lib\Debug\x64;$(ProJectDir)..\MiddleWare\Qt\lib;$(ProJectDir)..\MiddleWare\Qt\bin;$(ProJectDir)..\MiddleWare\Qt\bin\platforms;E:\X_HSU\201703\GraphicsApplication\QtConsoleApplication1\x64\Debug\plugins;$(ProjectDir)..\MiddleWare\soil_lib\Debug;$(ProJectDir)..\MiddleWare\glfw-3.2.1.bin.WIN64\lib-vc2015;$(ProJectDir)..\MiddleWare\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32d.lib;opengl32.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;Qt5Widgetsd.lib;glu32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32d.lib;opengl32.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;Qt5Widgetsd.lib;glu32.lib;freeglut.lib;SOIL.lib;glfw3.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
     <Manifest>
       <VerboseOutput>false</VerboseOutput>
@@ -62,24 +63,31 @@
       <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;$(ProjectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\include\GL;$(ProjectDir)..\MiddleWare\glew-2.0.0\include\GL;$(ProjectDir)..\MiddleWare\soil_include;$(ProjectDir)..\MiddleWare;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.;$(QTDIR)\lib;$(ProjectDir)..\MiddleWare\soil_lib\Release;$(ProJectDir)..\MiddleWare\freeglut-2.8.1\freeglut-2.8.1\lib\x64;$(ProJectDir)..\MiddleWare\glew-2.0.0\lib\Release\x64;E:\X_HSU\201703\GraphicsApplication\QtConsoleApplication1\x64\Debug\plugins;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5Widgets.lib;SOIL.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Primitives\AssImplLoad\loadModel.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/loadModel/</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Primitives\texture01.cpp" />
+    <ClCompile Include="TwoD_texture.cpp" />
     <ClCompile Include="CubicBox.cpp" />
     <ClCompile Include="CubicBox_AttributeLocation.cpp" />
     <ClCompile Include="CubicBox_DynamicDraw.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/CubicBox_DynamicDraw/</ObjectFileName>
     </ClCompile>
     <ClCompile Include="DrawElementsInstance.cpp" />
+    <ClCompile Include="LightSource.cpp" />
+    <ClCompile Include="loadBMP.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MeGLWindow.cpp" />
     <ClCompile Include="MyCamera.cpp">
@@ -90,24 +98,42 @@
     </ClCompile>
     <ClCompile Include="Primitives\ArrowGenerator.cpp" />
     <ClCompile Include="Primitives\CubeGenerator.cpp" />
+    <ClCompile Include="Primitives\PlaneGenerator.cpp" />
     <ClCompile Include="Primitives\ShapeGenerator.cpp" />
+    <ClCompile Include="Primitives\TeaPotGenerator.cpp" />
     <ClCompile Include="QtGLShaderCode.cpp" />
     <ClCompile Include="TeaPot.cpp" />
     <ClCompile Include="UniformColor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Primitives\AssImplLoad\camera.h" />
+    <ClInclude Include="Primitives\AssImplLoad\loadModel.h" />
+    <ClInclude Include="Primitives\AssImplLoad\mesh.h" />
+    <ClInclude Include="Primitives\AssImplLoad\model.h" />
+    <ClInclude Include="Primitives\AssImplLoad\shader.h" />
+    <ClInclude Include="Primitives\AssImplLoad\texture.h" />
+    <ClInclude Include="Primitives\shader.h" />
+    <ClInclude Include="Primitives\texture01.h" />
+    <ClInclude Include="TwoD_texture.h" />
     <ClInclude Include="CubicBox.h" />
     <ClInclude Include="CubicBox_AttributeLocation.h" />
     <ClInclude Include="CubicBox_DynamicDraw.h" />
     <ClInclude Include="DrawElementsInstance.h" />
+    <ClInclude Include="LightSource.h" />
+    <ClInclude Include="loadBMP.h" />
     <ClInclude Include="MeGLWindow.h" />
     <ClInclude Include="Primitives\ArrowGenerator.h" />
     <ClInclude Include="Primitives\CubeGenerator.h" />
+    <ClInclude Include="Primitives\PlaneGenerator.h" />
     <ClInclude Include="Primitives\ShapeData.h" />
     <ClInclude Include="Primitives\ShapeGenerator.h" />
+    <ClInclude Include="Primitives\TeapotData.h" />
+    <ClInclude Include="Primitives\TeaPotGenerator.h" />
+    <ClInclude Include="Primitives\TextureData.h" />
     <ClInclude Include="Primitives\Vertex.h" />
     <ClInclude Include="TeaPot.h" />
     <ClInclude Include="UniformColor.h" />
+    <ClInclude Include="XuModel.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CubicBox_AttributeLocation_VertexShaderCode.glsl" />
@@ -115,10 +141,23 @@
     <None Include="CubicBox_VertexShaderCode.glsl" />
     <None Include="DrawElementsInstance.glsl" />
     <None Include="fragmentShaderCode.glsl" />
+    <None Include="LightSource_FragmentPassThroughCode.glsl" />
+    <None Include="LightSource_FragmentShaderCode.glsl" />
+    <None Include="LightSource_VertexPassthroughCode.glsl" />
+    <None Include="LightSource_VertexShaderCode.glsl" />
+    <None Include="Primitives\AssImplLoad\model.frag" />
+    <None Include="Primitives\AssImplLoad\model.vertex" />
+    <None Include="Primitives\triangle.frag" />
+    <None Include="Primitives\triangle.vertex" />
     <None Include="simple_rotation_VertexShaderCode.glsl" />
+    <None Include="TwoD_texture_FragmentShaderCode.glsl" />
+    <None Include="TwoD_texture_VertexShaderCode.glsl" />
     <None Include="UniformColor_FragmentShaderCode.glsl" />
     <None Include="UniformColor_VertexShaderCode.glsl" />
     <None Include="vertexShaderCode.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Primitives\AssImplLoad\modelPath.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
